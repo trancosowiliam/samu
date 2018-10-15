@@ -38,7 +38,7 @@ Está aplicação tem como objetivo aumentar a acessibilidade do deficiente audi
 
 ### Créditos
 TODO: postar links para contato
-Product Owner: Aline Pacheco
-Designer: Jefferson Leutério
-WebService: Keoma Klein
+* Product Owner: Aline Pacheco
+* Designer: Jefferson Leutério
+* WebService: Keoma Klein
 
