@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dcedfd"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".view.adm.ticket.TicketActivity">
+
+    <requestFocus />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/tckGdlCenterHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tckTxtTitle"
+        style="@style/Text.Title.H2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="0dp"
+        android:text="@string/title_adm_ticket"
+        app:layout_constraintEnd_toStartOf="@id/tckTxtId"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tckTxtId"
+        style="@style/Text.Title.H2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tckTxtTitle"
+        app:layout_constraintTop_toTopOf="@id/tckTxtTitle"
+        tools:text="8" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tckLblAddress"
+        style="@style/Text.Title.H4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Endereço"
+        app:layout_constraintStart_toStartOf="@id/tckTxtTitle"
+        app:layout_constraintTop_toBottomOf="@id/tckTxtTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tckTxtSubArea1"
+        style="@style/Text.Title.H3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tckLblAddress"
+        app:layout_constraintTop_toBottomOf="@id/tckLblAddress"
+        tools:text="Centro Vila Velha - Vila Velha" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tckTxtSubArea2"
+        style="@style/Text.Title.H3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tckLblAddress"
+        app:layout_constraintTop_toBottomOf="@id/tckTxtSubArea1"
+        tools:text="Rua Antonio ataíde, 127" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tckLblNote"
+        style="@style/Text.Title.H4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Descrição"
+        app:layout_constraintStart_toStartOf="@id/tckTxtTitle"
+        app:layout_constraintTop_toBottomOf="@id/tckTxtSubArea2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tckTxtNote"
+        style="@style/Text.Title.H3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tckLblAddress"
+        app:layout_constraintTop_toBottomOf="@id/tckLblNote"
+        tools:text="Descricao" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tckLblStatus"
+        style="@style/Text.Title.H4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Status"
+        app:layout_constraintStart_toStartOf="@id/tckTxtTitle"
+        app:layout_constraintTop_toBottomOf="@id/tckTxtNote" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tckTxtStatus"
+        style="@style/Text.Title.H3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tckLblAddress"
+        app:layout_constraintTop_toBottomOf="@id/tckLblStatus"
+        tools:text="Soliticado > Ambulância Saiu" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tckLblDevice"
+        style="@style/Text.Title.H4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Dispositivo"
+        app:layout_constraintStart_toStartOf="@id/tckTxtTitle"
+        app:layout_constraintTop_toBottomOf="@id/tckTxtStatus" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tckTxtDevice"
+        style="@style/Text.Title.H3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tckLblAddress"
+        app:layout_constraintTop_toBottomOf="@id/tckLblDevice"
+        tools:text="654683115" />
+
+    <Button
+        android:id="@+id/tckBtnBlock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintEnd_toStartOf="@id/tckGdlCenterHorizontal"
+        android:text="Bloquear"/>
+
+    <Button
+        android:id="@+id/tckBtnStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintStart_toEndOf="@id/tckGdlCenterHorizontal"
+        android:text="Status"/>
+
+    <FrameLayout
+        android:id="@+id/tckPbLoading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:background="@color/overlayColor">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

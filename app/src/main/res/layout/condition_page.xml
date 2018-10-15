@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/condition_box_padding"
+        android:layout_marginEnd="@dimen/condition_box_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3333333" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6666667" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3333333" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6666667" />
+
+        <br.com.jwk.samu.component.conditionview.ConditionView
+            android:id="@+id/cpCvcondition11"
+            style="@style/Condition"
+            android:layout_marginStart="@dimen/condition_padding"
+            android:layout_marginTop="@dimen/condition_padding"
+            android:layout_marginEnd="@dimen/condition_padding"
+            android:layout_marginBottom="@dimen/condition_padding"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="@id/guideline1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <br.com.jwk.samu.component.conditionview.ConditionView
+            android:id="@+id/cpCvcondition12"
+            style="@style/Condition"
+            android:layout_marginStart="@dimen/condition_padding"
+            android:layout_marginEnd="@dimen/condition_padding"
+            app:layout_constraintBottom_toBottomOf="@id/cpCvcondition11"
+            app:layout_constraintEnd_toStartOf="@id/guideline2"
+            app:layout_constraintStart_toEndOf="@id/guideline1"
+            app:layout_constraintTop_toTopOf="@id/cpCvcondition11" />
+
+        <br.com.jwk.samu.component.conditionview.ConditionView
+            android:id="@+id/cpCvcondition13"
+            style="@style/Condition"
+            android:layout_marginStart="@dimen/condition_padding"
+            android:layout_marginEnd="@dimen/condition_padding"
+            app:layout_constraintBottom_toBottomOf="@id/cpCvcondition11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline2"
+            app:layout_constraintTop_toTopOf="@id/cpCvcondition11" />
+
+        <br.com.jwk.samu.component.conditionview.ConditionView
+            android:id="@+id/cpCvcondition21"
+            style="@style/Condition"
+            app:layout_constraintBottom_toTopOf="@id/guideline4"
+            app:layout_constraintEnd_toEndOf="@id/cpCvcondition11"
+            app:layout_constraintStart_toStartOf="@id/cpCvcondition11"
+            app:layout_constraintTop_toBottomOf="@id/guideline3" />
+
+        <br.com.jwk.samu.component.conditionview.ConditionView
+            android:id="@+id/cpCvcondition22"
+            style="@style/Condition"
+            app:layout_constraintBottom_toBottomOf="@id/cpCvcondition21"
+            app:layout_constraintEnd_toEndOf="@id/cpCvcondition12"
+            app:layout_constraintStart_toStartOf="@id/cpCvcondition12"
+            app:layout_constraintTop_toTopOf="@id/cpCvcondition21" />
+
+        <br.com.jwk.samu.component.conditionview.ConditionView
+            android:id="@+id/cpCvcondition23"
+            style="@style/Condition"
+            app:layout_constraintBottom_toBottomOf="@id/cpCvcondition21"
+            app:layout_constraintEnd_toEndOf="@id/cpCvcondition13"
+            app:layout_constraintStart_toStartOf="@id/cpCvcondition13"
+            app:layout_constraintTop_toTopOf="@id/cpCvcondition21" />
+
+        <br.com.jwk.samu.component.conditionview.ConditionView
+            android:id="@+id/cpCvcondition31"
+            style="@style/Condition"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/cpCvcondition11"
+            app:layout_constraintStart_toStartOf="@id/cpCvcondition11"
+            app:layout_constraintTop_toBottomOf="@id/guideline4" />
+
+        <br.com.jwk.samu.component.conditionview.ConditionView
+            android:id="@+id/cpCvcondition32"
+            style="@style/Condition"
+            app:layout_constraintBottom_toBottomOf="@id/cpCvcondition31"
+            app:layout_constraintEnd_toEndOf="@id/cpCvcondition12"
+            app:layout_constraintStart_toStartOf="@id/cpCvcondition12"
+            app:layout_constraintTop_toTopOf="@id/cpCvcondition31" />
+
+        <br.com.jwk.samu.component.conditionview.ConditionView
+            android:id="@+id/cpCvcondition33"
+            style="@style/Condition"
+            app:layout_constraintBottom_toBottomOf="@id/cpCvcondition31"
+            app:layout_constraintEnd_toEndOf="@id/cpCvcondition13"
+            app:layout_constraintStart_toStartOf="@id/cpCvcondition13"
+            app:layout_constraintTop_toTopOf="@id/cpCvcondition31" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

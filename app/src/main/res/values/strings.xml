@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">samu</string>
+    <string name="hint_search_location"><font size="15">Digite o local do ocorrido</font></string>
+    <string name="hint_search_condition"><font size="15">Digite a urgência</font></string>
+
+    <string name="title_activity_maps">Map</string>
+    <string name="title_condition">Digite a urgência</string>
+    <string name="title_note">Resumo da ocorrência</string>
+    <string name="title_tracker">Status da solicitação</string>
+    <string name="title_adm_ticket">Dados da ocorrência #</string>
+
+    <string name="subtitle_itens_selected">Itens selectionados</string>
+    <string name="subtitle_itens_note">Observação(opcional)</string>
+
+    <string name="action_create_ticket">Solicitar atendimento</string>
+    <string name="action_tracker_ticket">Acompanhar atendimento</string>
+    <string name="action_finish_ticket">Finalizar chamado</string>
+
+    <string name="info_help">Aguarde com a vítima em um local seguro e esteja presente na chegada da ambulância</string>
+
+    <string name="task_affinity_adm">.adm</string>
+</resources>
