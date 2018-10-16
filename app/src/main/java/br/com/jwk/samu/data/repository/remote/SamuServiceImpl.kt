@@ -9,7 +9,6 @@ import retrofit2.Response
 import retrofit2.Retrofit
 
 class SamuServiceImpl(retrofit: Retrofit) : SamuService {
-
     private val api by lazy { retrofit.create(SamuApi::class.java) }
 
     override fun postTicket(ticket: Ticket, onSuccess: (Long) -> Unit, onError: (String) -> Unit) {
@@ -42,6 +41,12 @@ class SamuServiceImpl(retrofit: Retrofit) : SamuService {
         }
     }
 
+    override fun ping() {
+        api.ping().enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {}
+            override fun onFailure(call: Call<Void>, t: Throwable) {}
+        })
+    }
 }
 
 fun <T, R> Call<T>.exec(onSuccess: (R) -> Unit, onFailure: (String) -> Unit, transform: ((T?) -> R)) {
@@ -50,7 +55,8 @@ fun <T, R> Call<T>.exec(onSuccess: (R) -> Unit, onFailure: (String) -> Unit, tra
             if (response?.isSuccessful == true) {
                 onSuccess(transform(response?.body()))
             } else {
-                onFailure(response?.errorBody()?.string().takeUnless { it.isNullOrEmpty() } ?: "Erro inesperado!")
+                onFailure(response?.errorBody()?.string().takeUnless { it.isNullOrEmpty() }
+                        ?: "Erro inesperado!")
             }
         }
 

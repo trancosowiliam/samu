@@ -35,4 +35,7 @@ interface SamuApi {
     fun blockDevice(
             @Path("deviceId") deviceId: String
     ): Call<UpdateStatusDto>
+
+    @POST("ping")
+    fun ping(): Call<Void>
 }

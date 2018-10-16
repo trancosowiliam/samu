@@ -9,8 +9,12 @@ class TicketsPresenter(private val service: SamuService) : TicketsContract.Prese
         view.showLoadingDialog()
 
         service.getTickets(onSuccess = { tickets ->
+            val orderedTickets = tickets.sortedWith(compareBy({
+                it.ticketStatus.maxBy { it.idStatus }?.idStatus ?: 100
+            }, { it.idTicket }))
+
             view.hideLoadingDialog()
-            view.showTickets(tickets)
+            view.showTickets(orderedTickets)
         }, onError = { error ->
             view.hideLoadingDialog()
             view.showErrorMessage(error)
@@ -20,7 +24,6 @@ class TicketsPresenter(private val service: SamuService) : TicketsContract.Prese
     override fun refresh() {
         service.getTickets(onSuccess = { tickets ->
             view.showTickets(tickets)
-        }){}
+        }) {}
     }
-
 }

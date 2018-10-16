@@ -16,6 +16,8 @@ class MainPresenter(private val service: SamuService, private val preferences: P
     override lateinit var view: MainContract.View
 
     override fun onLocationLoaded(latLng: LatLng) {
+        service.ping()
+
         if (preferences.statusEnabled) {
             loadLocationPosition(latLng)
             view.enableMap()

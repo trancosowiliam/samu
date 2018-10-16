@@ -8,4 +8,5 @@ interface SamuService {
     fun getTickets(onSuccess: (List<Ticket>) -> Unit, onError: (String) -> Unit)
     fun updateStatus(idTicket: Long, idStatus: Long, onSuccess: (Boolean) -> Unit, onError: (String) -> Unit)
     fun blockDevice(idDevice: String, onSuccess: (Boolean) -> Unit, onError: (String) -> Unit)
+    fun ping()
 }

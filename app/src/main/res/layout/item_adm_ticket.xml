@@ -6,93 +6,66 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/tcksGdlCenterHorizontal"
+    <ImageView
+        android:id="@+id/tcksImgStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_ambulancia_local" />
+
 
     <TextView
         android:id="@+id/tcksLblId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/app_font"
-        android:text="Id: "
-        app:layout_constraintEnd_toStartOf="@id/tcksTxtId"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/tcksImgStatus"
+        app:layout_constraintTop_toTopOf="@id/tcksImgStatus"
+        tools:text="#" />
 
     <TextView
         android:id="@+id/tcksTxtId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
         app:layout_constraintStart_toEndOf="@id/tcksLblId"
-        app:layout_constraintTop_toTopOf="@id/tcksLblId"
+        app:layout_constraintTop_toTopOf="@id/tcksImgStatus"
         tools:text="123" />
 
     <TextView
-        android:id="@+id/tcksLblLatitude"
+        android:id="@+id/tcksTxtStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="latitude:"
-        app:layout_constraintStart_toStartOf="@id/tcksLblId"
-        app:layout_constraintTop_toBottomOf="@id/tcksLblId" />
+        android:layout_marginStart="18dp"
+        android:text="Ambulancia no local"
+        app:layout_constraintStart_toEndOf="@id/tcksTxtId"
+        app:layout_constraintTop_toTopOf="@id/tcksLblId" />
 
-    <TextView
-        android:id="@+id/tcksTxtLatitude"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tcksTxtSubArea1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="12dp"
-        app:layout_constraintEnd_toStartOf="@id/tcksGdlCenterHorizontal"
-        app:layout_constraintStart_toEndOf="@id/tcksLblLatitude"
-        app:layout_constraintTop_toTopOf="@id/tcksLblLatitude"
-        tools:text="-20.1213" />
-
-    <TextView
-        android:id="@+id/tcksLblLongitude"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="latitude:"
-        app:layout_constraintStart_toStartOf="@id/tcksGdlCenterHorizontal"
-        app:layout_constraintTop_toTopOf="@id/tcksLblLatitude" />
-
-    <TextView
-        android:id="@+id/tcksTxtLongitude"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
         android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tcksLblLongitude"
-        app:layout_constraintTop_toTopOf="@id/tcksLblLatitude"
-        tools:text="-40.1213" />
-
-    <TextView
-        android:id="@+id/tcksLblNote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Descricão:"
         app:layout_constraintStart_toStartOf="@id/tcksLblId"
-        app:layout_constraintTop_toBottomOf="@id/tcksLblLatitude" />
+        app:layout_constraintTop_toBottomOf="@id/tcksLblId"
+        tools:text="Centro Vila Velha - Vila Velha" />
 
-    <TextView
-        android:id="@+id/tcksTxtNote"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tcksTxtSubArea2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@id/tcksViewSeparator"
+        android:ellipsize="end"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tcksLblNote"
-        app:layout_constraintTop_toTopOf="@id/tcksLblNote"
-        tools:text="Sem descricao" />
+        app:layout_constraintStart_toStartOf="@id/tcksLblId"
+        app:layout_constraintTop_toBottomOf="@id/tcksTxtSubArea1"
+        tools:text="Rua Antonio ataíde, 127" />
 
     <View
         android:id="@+id/tcksViewSeparator"
@@ -104,7 +77,7 @@
         android:background="#CCC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tcksTxtNote" />
+        app:layout_constraintTop_toBottomOf="@id/tcksTxtSubArea2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

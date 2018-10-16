@@ -32,10 +32,21 @@ class TicketsAdapter(val context: Context, val tickets: List<Ticket>, val listen
         }
 
         fun render(ticket: Ticket) {
-            itemView.tcksTxtId.text = ticket.idTicket.toString()
-            itemView.tcksTxtLatitude.text = ticket.address.latitude.toString()
-            itemView.tcksTxtLongitude.text = ticket.address.longitude.toString()
-            itemView.tcksTxtNote.text = ticket.note
+            val latestStatus = ticket.ticketStatus.maxBy { it.idStatus }
+            itemView.tcksImgStatus.setBackgroundResource(latestStatus?.resDrawable
+                    ?: R.drawable.ic_solicitado)
+            itemView.tcksTxtId.text = "#${ticket.idTicket.toString().padStart(3, '0')}"
+            itemView.tcksTxtStatus.text = latestStatus?.name ?: ""
+
+            itemView.tcksTxtSubArea1.text = listOfNotNull(
+                    ticket.address.neighborhood.takeUnless { it.isNullOrEmpty() },
+                    ticket.address.county.takeUnless { it.isNullOrEmpty() }
+            ).joinToString(" - ")
+
+            itemView.tcksTxtSubArea2.text = listOfNotNull(
+                    ticket.address.street.takeUnless { it.isNullOrEmpty() },
+                    ticket.address.homeNumber.takeUnless { it.isNullOrEmpty() }
+            ).joinToString(", ")
         }
     }
 }
